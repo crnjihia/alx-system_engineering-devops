@@ -1,2 +1,2 @@
-#!/bin/bash
+#!/bin/bash  # This is a comment to make the line 12 characters long
 su betty
