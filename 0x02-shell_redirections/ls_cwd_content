@@ -1,0 +1,14 @@
+total 48
+drwxr-xr-x 2 makau makau 4096 Jun 17 09:08 .
+drwxr-xr-x 6 makau makau 4096 Jun 17 07:45 ..
+-rwxr--r-- 1 makau makau   32 Jun 17 07:47 0-hello_world
+-rwxr--r-- 1 makau makau   28 Jun 17 08:11 1-confused_smiley
+-rwxr--r-- 1 makau makau   28 Jun 17 08:13 2-hellofile
+-rwxr--r-- 1 makau makau   39 Jun 17 08:16 3-twofiles
+-rwxr--r-- 1 makau makau   35 Jun 17 08:19 4-lastlines
+-rwxr--r-- 1 makau makau   35 Jun 17 08:22 5-firstlines
+-rwxr--r-- 1 makau makau   41 Jun 17 08:31 6-third_line
+-rwxr--r-- 1 makau makau   86 Jun 17 08:52 7-file
+-rwxr--r-- 1 makau makau   36 Jun 17 09:08 8-cwd_state
+-rw-r--r-- 1 makau makau   36 Jun 17 07:46 README.md
+-rw-r--r-- 1 makau makau    0 Jun 17 09:08 ls_cwd_content
