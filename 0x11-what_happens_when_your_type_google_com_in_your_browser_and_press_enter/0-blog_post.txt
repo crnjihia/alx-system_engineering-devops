@@ -1,0 +1,93 @@
+To answer this question in a simple and detailed manner, lets take a look at this word called server, which we would use alot in this article.
+
+### What’s a Server?
+
+A **server** is a computer program or device that provides a service to another program, called the **client**. This communication between the client and server forms the **client-server model**.
+
+### The Client-Server Model
+
+In this model, the **client** is the entity requesting information. Typically, clients are devices like computers, laptops, or smartphones that are connected to the internet via Wi-Fi or a mobile network. The **client** can be a web browser (like Google Chrome, Firefox, or Safari) or a device itself. For example, when you open your browser and type `www.google.com`, your device and browser act as the client.
+
+The **server** is the entity that provides information to the client. It stores websites, web applications, and related content. In our example, Google's server hosts the information you request.
+
+When a client wants to access a webpage, it sends a request to the server for the page. The server then responds by sending the requested content back to the client, which is displayed in the user's browser.
+
+### The Phonebook of the Internet
+
+When you type a website URL like `https://www.google.com` into your browser, the browser first breaks down the URL into parts. But before it can connect to the website, it needs to resolve the **domain name** into an IP address. This is where the **Domain Name System (DNS)** comes in.
+
+#### What’s a URL?
+
+**URL** stands for **Uniform Resource Locator** and is used to access a website. A URL is made up of several parts, such as the protocol, hostname, port, and file path. For instance, in `https://www.google.com`:
+
+- `https` is the protocol.
+- `www.google.com` is the hostname, which can be either a domain name or an IP address.
+
+#### DNS (Domain Name System)
+
+Think of DNS as the **phonebook of the internet**! DNS servers convert human-readable domain names into machine-readable IP addresses. Every device connected to the internet has a unique IP address, which is used by other devices to locate it.
+
+DNS resolution involves four main steps (and servers):
+
+1. **DNS Recursor**: The first server to receive the client’s query. If it already has the IP address cached, it returns it to the client. Otherwise, it queries other servers.
+2. **Root Server**: The root server doesn’t know the IP but can direct the query to the correct **TLD (Top-Level Domain) server**.
+3. **TLD Server**: The TLD server stores information about the domain extensions (like `.com`). It forwards the query to the appropriate authoritative nameserver.
+4. **Authoritative Nameserver**: The final stop. If the authoritative nameserver has the requested IP address, it returns it to the DNS recursor. If not, it sends an error.
+
+### Internet Protocol Suite
+
+Now that the browser knows the IP address of the server, it uses **internet protocols** to establish a connection and load the website. The most common protocol for web traffic is **TCP/IP (Transmission Control Protocol/Internet Protocol)**. It governs how data is formatted, transmitted, and routed between devices over the internet.
+
+### Traffic and Security Control
+
+Once the connection is made, data begins to flow between the client and server. But first, to prevent overwhelming any one server, we use a **load balancer**.
+
+#### Load Balancer
+
+A **load balancer** (such as **HAProxy**) is a server that distributes incoming web traffic across multiple servers, ensuring that no single server becomes overloaded. This is crucial for websites with high traffic like **Google**.
+
+#### Firewall
+
+A **firewall** acts as a barrier between a private network and the internet. It controls incoming and outgoing traffic based on predefined security rules, helping to prevent unauthorized access.
+
+#### SSL (Secure Socket Layer)
+
+To enhance security, **SSL** certificates are used to encrypt data between a web server and a client’s browser, ensuring that sensitive data remains private. For example, when entering credit card details on a site, SSL makes it difficult for attackers to intercept the data.
+
+You can tell a website uses SSL when the URL starts with `https://` and there is a padlock symbol in the browser’s address bar.
+
+### HTTP/HTTPS
+
+- **HTTP** (HyperText Transfer Protocol) is used by browsers and web servers to communicate. It is a stateless, text-based protocol. The client sends a request, and the server responds.
+- **HTTPS** is the secure version of HTTP. The additional 'S' stands for **Secure**, indicating that the connection is encrypted using SSL certificates.
+
+### HTTP Requests and Responses
+
+HTTP requests are made using different **methods**:
+
+- **GET**: Retrieve data from the server.
+- **POST**: Send data to the server.
+- **PUT**: Update existing data on the server.
+- **DELETE**: Remove data from the server.
+
+Each request returns a **status code** to indicate the outcome. Some common status codes include:
+
+- **100-199**: Informational responses
+- **200-299**: Successful responses
+- **300-399**: Redirection messages
+- **400-499**: Client errors
+- **500-599**: Server errors
+
+### Web and Application Servers
+
+- **Web Server**: A web server, like **Nginx** or **Apache**, handles static content (HTML, CSS, images, etc.) and serves it to clients.
+- **Application Server**: Most modern websites and web apps rely on dynamic content, which requires an application server. This server handles application logic, interacts with databases, and generates dynamic content.
+
+### Database
+
+A **database server** stores and manages data. It can be a **relational database** (like **MySQL**, **PostgreSQL**, or **MariaDB**) or a **non-relational database** (like **MongoDB**).
+
+### Conclusion
+
+When you type a website address like `www.google.com`, a series of complex steps happens in fractions of a second to retrieve the page. From DNS resolution to SSL encryption and HTTP request handling, each part plays a role in getting the requested data to your browser safely and securely.
+
