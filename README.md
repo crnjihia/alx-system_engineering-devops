@@ -1,4 +1,4 @@
-# ALX System Engineering Devops <img src="https://miro.medium.com/v2/resize:fit:2400/1*E1LonYGC5Fx4QLY4W5SaVA.jpeg" alt="ALX Africa Image" width="50" style="float: right; margin-left: 8px;"/>
+# ALX System Engineering Devops <img src="https://miro.medium.com/v2/resize:fit:2400/1*E1LonYGC5Fx4QLY4W5SaVA.jpeg" alt="ALX Africa Image" width="30" style="float: left; margin-right: 10px;"/>
 
 This repository contains projects and assignments completed as part of the **ALX Software Engineering Course**. It focuses on system engineering and DevOps concepts, providing hands-on experience in scripting, networking, server configuration, and debugging.
 
