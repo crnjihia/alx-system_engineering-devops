@@ -1,5 +1,5 @@
 <div style="text-align: center;">
-   <img src="https://goethio.net/wp-content/uploads/2023/04/7_Do-hard-things-100.webp" alt="ALX Africa Image" width="450"/>
+   <img src="https://goethio.net/wp-content/uploads/2023/04/7_Do-hard-things-100.webp" alt="ALX Africa Image" width="300"/>
 </div>
 
 # ALX System Engineering Devops
