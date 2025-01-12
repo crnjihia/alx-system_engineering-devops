@@ -79,7 +79,7 @@ This repository contains projects and assignments completed as part of the **ALX
 
 ## Author
 
-**[Christopher Njihia]**  
+**Christopher Njihia**  
 GitHub: [crnjihia](https://github.com/crnjihia)
 
 ---
