@@ -2,17 +2,23 @@
 # Script that will display information about subdomains
 
 DNS_info () {
-    ANSWER=$(dig $2 | grep -A1 'ANSWER SECTION:' | awk 'NR==2 {print $0}')
-    echo "The subdomain $1 is a $(echo $ANSWER | awk '{print $4}') record and points to $(echo $ANSWER | awk '{print $5}')"
+    ANSWER=$(dig +short "$2")
+    if [[ -n "$ANSWER" ]]; then
+        echo "The subdomain $1 is an A record and points to $ANSWER"
+    else
+        echo "No record found for $1"
+    fi
 }
 
-if [[ $# == 1 ]]; then
+if [[ $# -eq 1 ]]; then
     subdomains=('www' 'lb-01' 'web-01' 'web-02')
     for i in "${subdomains[@]}"; do
-	CONCAT="$i.$1"
-	DNS_info $i $CONCAT
+        CONCAT="$i.$1"
+        DNS_info "$i" "$CONCAT"
     done
-else
+elif [[ $# -eq 2 ]]; then
     CONCAT="$2.$1"
-    DNS_info $2 $CONCAT
+    DNS_info "$2" "$CONCAT"
+else
+    echo "Usage: $0 domain [subdomain]"
 fi
