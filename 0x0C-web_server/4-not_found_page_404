@@ -1,30 +1,38 @@
 #!/usr/bin/env bash
-# Configure your Nginx server to have a custom 404 page
+# Configure Nginx to serve a custom 404 page with "Ceci n'est pas une page"
 
-apt-get update
+# Update package lists and install Nginx
+apt-get update -y
 apt-get install -y nginx
 
-mkdir /etc/nginx/html
-touch /etc/nginx/html/index.html
-echo "Hello World!" > /etc/nginx/html/index.html
-touch /etc/nginx/html/404.html
-echo "Ceci n'est pas une page" > /etc/nginx/html/404.html
+# Remove the default index page (if exists)
+rm -f /var/www/html/index.nginx-debian.html
 
-printf %s "server {
-    listen 80;
+# Create an index.html file
+echo "Hello World!" > /var/www/html/index.html
+
+# Create a custom 404 page
+echo "Ceci n'est pas une page" > /var/www/html/404.html
+
+# Configure Nginx
+cat << EOF > /etc/nginx/sites-available/default
+server {
+    listen 80 default_server;
     listen [::]:80 default_server;
-    root   /etc/nginx/html;
-    index  index.html index.htm;
-
+    root /var/www/html;
+    index index.html index.htm;
+    
     location /redirect_me {
         return 301 https://www.youtube.com/watch?v=QH2-TGUlwu4;
     }
 
+    # Custom 404 error page
     error_page 404 /404.html;
-    location /404 {
-      root /etc/nginx/html;
-      internal;
-    }
-}" > /etc/nginx/sites-available/default
+}
+EOF
 
+# Ensure Nginx is using the updated configuration
+ln -sf /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
+
+# Restart Nginx to apply changes
 service nginx restart

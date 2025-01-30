@@ -4,15 +4,24 @@
 # - Nginx listening on port 80
 # - Root page displays "Hello World!"
 
-# Update and install Nginx
+# Update package lists
 apt-get update -y
+
+# Install Nginx
 apt-get install nginx -y
 
-# Allow traffic on port 80
+# Enable UFW and allow Nginx traffic
 ufw allow 'Nginx HTTP'
+ufw enable
 
-# Write "Hello World!" to the default root page
+# Ensure the default Nginx page is removed
+rm -f /var/www/html/index.nginx-debian.html
+
+# Write "Hello World!" to index.html
 echo 'Hello World!' > /var/www/html/index.html
 
-# Reload Nginx to apply changes
-nginx -s reload
+# Set correct permissions
+chown www-data:www-data /var/www/html/index.html
+
+# Restart Nginx to apply changes
+service nginx restart
