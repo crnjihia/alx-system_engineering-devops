@@ -2,7 +2,7 @@
 
 ## **Issue Summary**
 
-- **Outage Duration**: March 1, 2025, 14:30 - 15:45 UTC (1 hour 15 minutes)
+- **Outage Duration**: March 1, 2025, 14:30 - 15:45 (1 hour 15 minutes)
 - **Impact**:
   - Our web application became completely inaccessible to all users.
   - Customers trying to access the platform were met with a **502 Bad Gateway** error.
